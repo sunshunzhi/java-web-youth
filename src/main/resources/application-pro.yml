@@ -1,0 +1,38 @@
+#生产环境配置文件
+server:
+  port: 8080
+
+spring:
+  #配置数据库
+  datasource:
+    url: jdbc:mysql://host:3306/youth?useSSL=false&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #配置redis
+  data:
+    redis:
+      host:
+      password:
+      port: 6379
+      timeout: 30000
+  #设置项目名称
+  application:
+    name: youth
+
+#mybatis-plus配置
+mybatis-plus:
+  configuration:
+    logImpl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#jwt配置
+jwt:
+  header: token
+  #签名32位字符串
+  secret: woshiwudidewwwqwerdsfkshwyustwhs
+  #过期时间
+  expiration:
+    token:
+      #单位毫秒
+      access: 1800000
+      refresh: 18000000
